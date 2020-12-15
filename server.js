@@ -70,7 +70,7 @@ server.on('connection', (socket) => {
           socket.write(`You are the first joiner of the chat server!\n`);
         }
 
-        showHistoricalMessages(sockets, historicalMessages);
+        showHistoricalMessages(socket, historicalMessages);
 
         // Broadcast to existing users of new joiner
         sockets.push(socket);
