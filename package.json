@@ -1,8 +1,8 @@
 {
   "name": "my-chat-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple TCP chat-server that accepts clients that connect to it over TCP. You can use `netcat` or `telnet` to connect to the server.",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "prod": "node server.js",
