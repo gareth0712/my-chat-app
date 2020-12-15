@@ -9,9 +9,7 @@ const showHistoricalMessages = (socket, historicalMessages) => {
   if (historicalMessages.length === 0) {
     return;
   }
-  socket.write(
-    `Retrieving lastest ${historicalMessages.length} messages in the chat server...\n`
-  );
+  socket.write(`Retrieving lastest ${historicalMessages.length} messages in the chat server ...\n`);
   historicalMessages.forEach((message) => {
     socket.write(message);
   });
