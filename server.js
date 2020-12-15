@@ -90,6 +90,9 @@ server.on('connection', (socket) => {
   // Socket End listener
   socket.on('end', () => {
     removeSocket(socket);
+    logger.info(
+      `User with nickname ${socket.nickname} of ID ${socket.id} disconnected from server`
+    );
     broadcast(
       socket.nickname,
       sockets,
@@ -99,6 +102,7 @@ server.on('connection', (socket) => {
 
   // Socket Error listener
   socket.on('error', (err) => {
+    socket.write('Error occurred in the chat server.');
     logger.error(`error occurred: ${err.message}`);
     logger.error(err);
   });
