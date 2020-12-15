@@ -8,7 +8,14 @@ const doesNameExist = (candidateName, sockets) => {
   return nicknames.includes(candidateName);
 };
 
+const isValidName = (candidateName) => {
+  if (candidateName === '') return false;
+  const regex = /[/\\`~!@#$%^&*()=+[\]{};:'"|,.<>? ]/;
+  return !regex.test(candidateName);
+};
+
 module.exports = {
   doesNameExist,
   getNicknames,
+  isValidName,
 };
