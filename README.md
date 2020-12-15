@@ -27,7 +27,7 @@ A simple TCP chat-server that accepts clients that connect to it over TCP. You c
 
 ### Windows user
 
-It is recommended to install `ncat` https://nmap.org/ncat/. After downloading the zip file, follow the steps below to complete the installation
+It is recommended to install `ncat` from https://nmap.org/ncat/. After downloading the zip file, follow the steps below to complete the installation
 
 1. Unzip the downloaded ncap zip file.
 2. Go to directory with ncat.exe.
@@ -42,11 +42,11 @@ It is recommended to install `ncat` https://nmap.org/ncat/. After downloading th
 
 # Connect to my-chat-app
 
-## Using Netcat / nc as connection client
+### Using Netcat / nc as connection client
 
 Run `netcat localhost 3000` to connect to my-chat-app
 
-## Using ncat as connection client
+### Using ncat as connection client
 
 1. Open Terminal, `cd` to the directory of ncat.exe if you haven't placed it to one of the environmental variables
 2. Run `ncat localhost 3000` to connect to my-chat-app
