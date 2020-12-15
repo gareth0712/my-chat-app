@@ -1,0 +1,38 @@
+{
+  "name": "my-chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "prod": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gareth0712/my-chat-app.git"
+  },
+  "author": "Gareth Lau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gareth0712/my-chat-app/issues"
+  },
+  "homepage": "https://github.com/gareth0712/my-chat-app#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "log4js": "^6.3.0",
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "prettier": "^2.1.2"
+  }
+}
