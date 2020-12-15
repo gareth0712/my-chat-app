@@ -4,7 +4,10 @@ const moment = require('moment');
 
 const broadcast = require('./utils/broadcast');
 const logger = require('./utils/logger');
-const { addMessages, broadcastMessages } = require('./utils/handle-messages');
+const {
+  addMessages,
+  showHistoricalMessages,
+} = require('./utils/handle-messages');
 const { doesNameExist, getNicknames } = require('./utils/validator');
 
 dotenv.config({ path: './config.env' });
@@ -66,6 +69,8 @@ server.on('connection', (socket) => {
         } else {
           socket.write(`You are the first joiner of the chat server!\n`);
         }
+
+        showHistoricalMessages(sockets, historicalMessages);
 
         // Broadcast to existing users of new joiner
         sockets.push(socket);
