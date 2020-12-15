@@ -53,13 +53,16 @@ Run `netcat localhost 3000` to connect to my-chat-app
 
 # Test
 
-1. Start my-chat-app by following the above guidelines.
-2. Open another Terminal, `cd` to the my-chat-app directory and `npm run test`
+1. `cd my-chat-app`
+2. `npm install --dev`
+3. `npm run test`
 
 # Development
 
 1. `cd my-chat-app`
-2. `npm run start`
+2. `npm install` if you haven't done it yet
+3. `npm install --dev`
+4. `npm run start`
 
 # Licence
 
