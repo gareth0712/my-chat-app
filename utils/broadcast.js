@@ -7,9 +7,21 @@ const broadcast = (from, sockets, message) => {
     return;
   }
 
+  // Check if "@mentioned" is used
+  const regex = /(@[0-9A-Za-z-_]*)/g;
+  let mentionedNicknames = message.match(regex);
+  if (mentionedNicknames) {
+    mentionedNicknames = mentionedNicknames.map((el) => el.replace('@', ''));
+  }
+
   // If there are clients remaining then broadcast message
   sockets.forEach(function (socket) {
+    if (mentionedNicknames && mentionedNicknames.includes(socket.nickname)) {
+      console.log('im in');
+      socket.write('\u0007');
+    }
     if (socket.nickname === from) return;
+
     // Send messages to other receivers
     return socket.write(message);
   });
