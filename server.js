@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const { userInputListener, endListener, errorListener } = require('./listeners/socketListener');
 const logger = require('./utils/logger');
 
-dotenv.config({ path: './config.env' });
+dotenv.config({ path: './config/config.env' });
 
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || 'localhost';
@@ -34,5 +34,5 @@ server.on('error', (err) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`TCP Server is up on port ${port}`);
+  logger.info('Server is ready to be connect through localhost:3000');
 });
