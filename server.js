@@ -33,6 +33,10 @@ server.on('error', (err) => {
   logger.error(err);
 });
 
+server.on('close', () => {
+  logger.info('Server closed');
+});
+
 server.listen(port, host, () => {
   logger.info('Server is ready to be connect through localhost:3000');
 });
