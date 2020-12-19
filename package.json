@@ -8,6 +8,7 @@
     "docker-build": "docker build -t my-chat-app:v1 .",
     "docker-start": "docker run -it -p 3000:3000 --mount type=bind,source=\"$(pwd)\"/log,target=/app/log --name my-chat-app my-chat-app:v1",
     "docker-start-bkg": "docker run --restart always -itd -p 3000:3000 --mount type=bind,source=\"$(pwd)\"/log,target=/app/log --name my-chat-app my-chat-app:v1",
+    "docker-stop": "docker rm -f my-chat-app",
     "prod": "node server.js",
     "test": "jest"
   },
