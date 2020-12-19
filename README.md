@@ -46,7 +46,9 @@ Nice to meet you too!
 
 ## My-chat-app
 
-`npm install`
+```
+npm install
+```
 
 ## Connection Client
 
@@ -70,7 +72,9 @@ It is recommended to install `ncat` from https://nmap.org/ncat/. After downloadi
 
 # Run my-chat-app
 
-Run `npm run prod`
+```
+npm run prod
+```
 
 # Connect to my-chat-app
 
@@ -91,37 +95,51 @@ I created Dockerfile and added scripts in package.json to allow building docker 
 
 ### Building Docker image
 
-`npm run docker-build`
+```
+npm run docker-build
+```
 
 ### Running my-chat-app in Docker container
 
 #### For Mac/Linux,
 
-`npm run docker-start`
+```
+npm run docker-start
+```
 
 #### For Windows,
 
-`npm run docker-start-win`
+```
+npm run docker-start-win
+```
 
 ### Running my-chat-app in Docker container in the background
 
 #### For Mac/Linux,
 
-`npm run docker-start-bkg`
+```
+npm run docker-start-bkg
+```
 
 #### For Windows,
 
-`npm run docker-start-bkg-win`
+```
+npm run docker-start-bkg-win
+```
 
 ### Stop and remove my-chat-app Docker container
 
-`npm run docker-stop`
+```
+npm run docker-stop
+```
 
 ## [BETA] Docker for connection client, netcat
 
 ### Building Docker image
 
-`npm run docker-client-build`
+```
+npm run docker-client-build
+```
 
 ### Running netcat in Docker container
 
