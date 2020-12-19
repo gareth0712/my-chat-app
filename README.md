@@ -46,9 +46,13 @@ Nice to meet you too!
 
 ## My-chat-app
 
+1. Running the following to install necessary dependencies for my-chat-app
+
 ```
 npm install
 ```
+
+2. Done
 
 ## Connection Client
 
@@ -72,20 +76,32 @@ It is recommended to install `ncat` from https://nmap.org/ncat/. After downloadi
 
 # Run my-chat-app
 
+1. Run the following to start my-chat-app
+
 ```
 npm run prod
 ```
+
+2. Done
 
 # Connect to my-chat-app
 
 ### Using Netcat / nc as connection client
 
-Run `netcat localhost 3000` to connect to my-chat-app
+1. Connect to my-chat-app with host name "localhost" and port "3000"
+
+```
+netcat localhost 3000
+```
 
 ### Using ncat as connection client
 
 1. Open Terminal, `cd` to the directory of ncat.exe if you haven't placed it to one of the environmental variables
-2. Run `ncat localhost 3000` to connect to my-chat-app
+2. Connect to my-chat-app
+
+```
+ncat localhost 3000
+```
 
 # Docker
 
@@ -95,9 +111,13 @@ I created Dockerfile and added scripts in package.json to allow building docker 
 
 ### Building Docker image
 
+1. Build docker image with the Dockerfile
+
 ```
 npm run docker-build
 ```
+
+2. Done
 
 ### Running my-chat-app in Docker container
 
@@ -129,17 +149,25 @@ npm run docker-start-bkg-win
 
 ### Stop and remove my-chat-app Docker container
 
+1. This will remove the my-chat-app container completely
+
 ```
 npm run docker-stop
 ```
+
+2. Done
 
 ## [BETA] Docker for connection client, netcat
 
 ### Building Docker image
 
+1. Build docker image for netcat client using Dockerfile-client
+
 ```
 npm run docker-client-build
 ```
+
+2. Done
 
 ### Running netcat in Docker container
 
@@ -168,14 +196,36 @@ By default, logs are saved in `log` directory.
 
 # Test
 
-1. `npm install --dev`
-2. `npm run test`
+1. Install dev dependencies
+
+```
+npm install --dev
+```
+
+2. Start testing using jest
+
+```
+npm run test
+```
+
+3. There should be 8 tests to be passed.
+4. If all tests are passed, done
 
 # Development
 
-1. `npm install` if you haven't done it yet
-2. `npm install --dev`
-3. `npm run start`
+1. if you haven't installed any dependencies
+
+```
+npm install
+```
+
+2. Install dev dependencies
+   `npm install --dev`
+3. Start development with nodemon
+
+```
+npm run start
+```
 
 # Licence
 
