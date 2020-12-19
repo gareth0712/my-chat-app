@@ -36,3 +36,5 @@ becomes
 ```
 const array = [...Array(10).keys()].map((i) => `Message ${Number(i + 1)}`);
 ```
+
+5. I added scripts in package.json for creating Docker image for my-chat-app and running it in Docker container to ensure stability
