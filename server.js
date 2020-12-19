@@ -1,42 +1,23 @@
 const server = require('net').createServer();
 const dotenv = require('dotenv');
+const getIpAddress = require('./utils/network');
 
-const { userInputListener, endListener, errorListener } = require('./listeners/socketListener');
+const { serverConnectionListener, serverCloseListener, serverErrorListener } = require('./listeners/server-listeners');
 const logger = require('./utils/logger');
 
 dotenv.config({ path: './config/config.env' });
 
-const port = process.env.PORT || 3000;
-const host = process.env.HOST || 'localhost';
+(async () => {
+  const port = process.env.PORT || 3000;
+  const host = process.env.HOST || 'localhost';
+  const ipAddress = await getIpAddress();
 
-let id = 0;
+  serverConnectionListener(server);
+  serverErrorListener(server);
+  serverCloseListener(server);
 
-server.on('connection', (socket) => {
-  // Assign an independent id to each socket upon connection
-  id += 1;
-  socket.id = id;
-
-  logger.info(`New connection from ${socket.remoteAddress}:${socket.remotePort} establishes to the chat server`);
-  logger.info(`ID ${socket.id} is assigned to the new joiner`);
-
-  // Greet the user
-  socket.write('< Welcome to my chat server! What is your nickname?\n');
-
-  userInputListener(socket);
-  endListener(socket);
-  errorListener(socket);
-});
-
-// Server Error listener
-server.on('error', (err) => {
-  logger.error(`error occurred: ${err.message}`);
-  logger.error(err);
-});
-
-server.on('close', () => {
-  logger.info('Server closed');
-});
-
-server.listen(port, host, () => {
-  logger.info('Server is ready to be connect through localhost:3000');
-});
+  server.listen(port, host, () => {
+    console.log(`Server is up and can be connected through ${ipAddress}:3000`);
+    logger.info(`Server is up and can be connected through ${ipAddress}:3000`);
+  });
+})();
