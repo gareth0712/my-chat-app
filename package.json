@@ -13,8 +13,8 @@
     "docker-start-bkg": "docker run --restart always -itd -p 3000:3000 --mount type=bind,source=\"$(pwd)\"/log,target=/app/log --name my-chat-app my-chat-app:v1",
     "docker-start-bkg-win": "docker run --restart always -itd -p 3000:3000 --mount type=bind,source=%CD%\\log,target=/app/log --name my-chat-app my-chat-app:v1",
     "docker-stop": "docker rm -f my-chat-app",
-    "prod": "node server.js",
-    "test": "jest"
+    "docker-client-build": "docker build -t netcat-client:v1 -f Dockerfile-client .",
+    "docker-client-start": "docker run -it --name netcat-client netcat-client:v1"
   },
   "jest": {
     "testEnvironment": "node"
