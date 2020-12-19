@@ -17,8 +17,7 @@ const broadcast = (from, sockets, message) => {
   // If there are clients remaining then broadcast message
   sockets.forEach(function (socket) {
     if (mentionedNicknames && mentionedNicknames.includes(socket.nickname)) {
-      console.log('im in');
-      socket.write('\u0007');
+      socket.write('\x07');
     }
     if (socket.nickname === from) return;
 
