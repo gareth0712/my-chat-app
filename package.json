@@ -5,6 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
+    "docker-build": "docker build -t my-chat-app:v1 .",
+    "docker-start": "docker run -it -p 3000:3000 -v log:/app/log --name my-chat-app my-chat-app:v1",
+    "docker-start-bkg": "docker run -itd -p 3000:3000 -v log:/app/log --name my-chat-app my-chat-app:v1",
     "prod": "node server.js",
     "test": "jest"
   },
